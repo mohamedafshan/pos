@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,4 +41,9 @@ Route::get('/change/password', [AdminController::class, 'ChangePassword'])->name
 Route::post('/update/password', [AdminController::class, 'UpdatePassword'])->name('update.password');
 }); //end user middleware
 
+//Employee All Manage
+Route::controller(EmployeeController::class)->group(function(){
+    Route::get('all/employee','AllEmployee')->name('all.employee');
+    Route::get('add/employee','AddEmployee')->name('add.employee');
+});
 require __DIR__.'/auth.php';

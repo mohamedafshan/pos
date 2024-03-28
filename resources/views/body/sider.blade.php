@@ -21,19 +21,16 @@
                 <li>
                     <a href="#sidebarEcommerce" data-bs-toggle="collapse">
                         <i class="mdi mdi-cart-outline"></i>
-                        <span> Ecommerce </span>
+                        <span> Employee Manage </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarEcommerce">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="ecommerce-sellers.html">Sellers</a>
+                                <a href="{{ route('all.employee') }}">All Employee</a>
                             </li>
                             <li>
-                                <a href="ecommerce-cart.html">Shopping Cart</a>
-                            </li>
-                            <li>
-                                <a href="ecommerce-checkout.html">Checkout</a>
+                                <a href="{{ route('add.employee') }}">Add Employee</a>
                             </li>
                         </ul>
                     </div>
