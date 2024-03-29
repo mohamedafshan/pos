@@ -30,7 +30,7 @@
                         <div class="card-body">
                             <!-- end timeline content-->
                             <div class="tab-pane" id="settings">
-                                <form method="POST" action="" enctype="multipart/form-data">
+                                <form method="POST" action="{{ route('employee.store') }}" enctype="multipart/form-data">
                                     @csrf
                                     <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i>
                                         Add Employee</h5>
@@ -68,7 +68,7 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="firstname" class="form-label">Employee Address</label>
-                                                <input type="text" class="form-control"@error('address') is-invalid @enderror name="address">
+                                                <input type="text" class="form-control" @error('address') is-invalid @enderror name="address">
                                                 @error('address')
                                                 <div class="text-danger">{{ $message }}</div>
                                                 @enderror
@@ -78,14 +78,17 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="firstname" class="form-label">Employee Address</label>
-                                                    <select class="form-select" id="example-select" name="experience" >
-                                                        <option selected="">Select Year</option>
+                                                    <select class="form-select @error('experience') is-invalid @enderror" id="example-select" name="experience" >
+                                                        <option selected disabled>Select Year</option>
                                                         <option value="1 Year">1 Year</option>
                                                         <option value="2 Year">2 Year</option>
                                                         <option value="3 Year">3 Year</option>
                                                         <option value="4 Year">4 Year</option>
                                                         <option value="5 Year">5 Year</option>
                                                     </select>
+                                                    @error('experience')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                   @enderror
                                             </div>
                                         </div>
 
@@ -112,7 +115,7 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="firstname" class="form-label">Employee City</label>
-                                                <input type="text" class="form-control"@error('city') is-invalid @enderror name="city">
+                                                <input type="text" class="form-control" @error('city') is-invalid @enderror name="city">
                                                 @error('city')
                                                 <div class="text-danger">{{ $message }}</div>
                                                 @enderror
@@ -122,7 +125,10 @@
                                         <div class="col-md-12">
                                             <div class="mb-2">
                                                 <label for="inputGroupFile04" class="form-label"></label>
-                                                <input class="form-control" type="file" id="photo" name="image" >
+                                                <input class="form-control @error('image') is-invalid @enderror" type="file" id="photo" name="image" >
+                                                    @error('city')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
                                             </div>
                                         </div>
 

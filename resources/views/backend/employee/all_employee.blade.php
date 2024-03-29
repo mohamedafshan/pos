@@ -54,7 +54,7 @@
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td>{{ $item->phone }}</td>
-                                        <td>{{ $item->salary }}</td>
+                                        <td>{{ $item->salaray }}</td>
                                         <td>
                                             <a href="" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
                                             <a href="" class="btn btn-danger rounded-pill waves-effect waves-light">Delete</a>
