@@ -26,12 +26,6 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="header-title">All Employee</h4>
-                        <p class="text-muted font-13 mb-4">
-                            DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction
-                            function:
-                            <code>$().DataTable();</code>.
-                        </p>
-
                         <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                             <thead>
                                 <tr>
@@ -50,14 +44,14 @@
                                 @foreach ($employee as $key=> $item)                                
                                     <tr>
                                         <td>{{ $key+1 }}</td>
-                                        <td><img src="{{ asset($item->image) }}" alt="" style="width: 50px; height: 40px"></td>
+                                        <td><img src="{{ asset($item->image) }}" alt="" style="width: 50px; height: 50px" class="rounded-circle"></td>
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td>{{ $item->phone }}</td>
                                         <td>{{ $item->salaray }}</td>
                                         <td>
-                                            <a href="" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
-                                            <a href="" class="btn btn-danger rounded-pill waves-effect waves-light">Delete</a>
+                                            <a href="{{ route('edit.employee',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
+                                            <a href="{{ route('delete.employee',$item->id) }}" id="delete" class="btn btn-danger rounded-pill waves-effect waves-light">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
