@@ -76,6 +76,7 @@ class EmployeeController extends Controller
         $employee = Employee::findOrFail($id);
         return view('backend.employee.edit_employee',compact('employee'));
     }
+    
     public function UpdateEmployee(Request $request){
          $employee_id = $request->id;
          if($request->file('image')){

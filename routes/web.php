@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\EmployeeController;
+use App\Http\Controllers\Backend\SupplierController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,5 +51,26 @@ Route::controller(EmployeeController::class)->group(function(){
     Route::get('edit/employee/{id}','EditEmployee')->name('edit.employee');
     Route::post('update/employee','UpdateEmployee')->name('employee.update');
     Route::get('delete/employee/{id}','DeleteEmployee')->name('delete.employee');
+});
+
+//Customer All Manage
+Route::controller(CustomerController::class)->group(function(){
+    Route::get('all/customer','AllCustomer')->name('all.customer'); 
+    Route::get('add/customer','AddCustomer')->name('add.customer'); 
+    Route::post('store/customer','StoreCustomer')->name('customer.store');
+    Route::get('edit/customer/{id}','EditCustomer')->name('edit.customer');
+    Route::post('update/customer','UpdateCustomer')->name('customer.update');
+    Route::get('delete/cutomer/{id}','DeleteCustomer')->name('delete.customer');
+});
+
+//Supplier All Manage
+Route::controller(SupplierController::class)->group(function(){
+    Route::get('all/supplier','AllSupplier')->name('all.supplier');
+    Route::get('add/supplier','AddSupplier')->name('add.supplier');  
+    Route::post('store/supplier','StoreSupplier')->name('supplier.store');
+    Route::get('edit/supplier/{id}','EditSupplier')->name('edit.supplier');
+    Route::post('update/supplier','UpdateSupplier')->name('supplier.update');
+    Route::get('delete/supplier/{id}','DeleteSupplier')->name('delete.supplier');
+    Route::get('details/supplier/{id}','DetailsSupplier')->name('details.supplier');
 });
 require __DIR__.'/auth.php';

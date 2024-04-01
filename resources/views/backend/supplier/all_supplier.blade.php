@@ -12,10 +12,11 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <a href="{{ route('add.employee') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Employee</a>
+                            <a href="{{ route('add.supplier') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Supplier</a>
+                            
                         </ol>
                     </div>
-                    <h4 class="page-title">All Employee</h4>
+                    <h4 class="page-title">All Supplier</h4>
                 </div>
             </div>
         </div>     
@@ -33,24 +34,27 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>phone</th>
-                                    <th>Salary</th>
+                                    <th>Type</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                         
                         
                             <tbody>
-                                @foreach ($employee as $key=> $item)                                
+                                @foreach ($supplier as $key=> $item)                                
                                     <tr>
                                         <td>{{ $key+1 }}</td>
                                         <td><img src="{{ asset($item->image) }}" alt="" style="width: 50px; height: 50px" class="rounded-circle"></td>
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td>{{ $item->phone }}</td>
-                                        <td>{{ $item->salaray }}</td>
+                                        <td>{{ $item->type }}</td>
                                         <td>
-                                            <a href="{{ route('edit.employee',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
-                                            <a href="{{ route('delete.employee',$item->id) }}" id="delete" class="btn btn-danger rounded-pill waves-effect waves-light">Delete</a>
+                                            <a href="{{ route('edit.supplier',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"><i class="fa-regular fa-pen-to-square"></i></a>
+                                           
+                                            <a href="{{ route('delete.supplier',$item->id) }}" id="delete" class="btn btn-danger rounded-pill waves-effect waves-light"><i class="fa-solid fa-trash"></i></a>
+
+                                            <a href="{{ route('details.supplier',$item->id) }}" class="btn btn-info rounded-pill waves-effect waves-light"><i class="fa-solid fa-eye"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
