@@ -12,10 +12,10 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <a href="{{ route('add.employee') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Employee</a>
+                            <a href="{{ route('add.advance.salary') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Advance Salary</a>
                         </ol>
                     </div>
-                    <h4 class="page-title">All Employee</h4>
+                    <h4 class="page-title">All Salary</h4>
                 </div>
             </div>
         </div>     
@@ -31,26 +31,26 @@
                                     <th>S1</th>
                                     <th>Image</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>phone</th>
+                                    <th>Month</th>
                                     <th>Salary</th>
+                                    <th>Advance Salary</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                         
                         
                             <tbody>
-                                @foreach ($employee as $key=> $item)                                
+                                @foreach ($salary as $key=> $item)                                
                                     <tr>
                                         <td>{{ $key+1 }}</td>
-                                        <td><img src="{{ asset($item->image) }}" alt="" style="width: 50px; height: 50px" class="rounded-circle"></td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->email }}</td>
-                                        <td>{{ $item->phone }}</td>
-                                        <td>{{ $item->salaray }}</td>
+                                        <td><img src="{{ asset($item->employee->image) }}" alt="" style="width: 50px; height: 50px" class="rounded-circle"></td>
+                                        <td>{{ $item->employee->name }}</td>
+                                        <td>{{ $item->month }}</td>
+                                        <td>{{ $item->employee->salaray }}</td>
+                                        <td>{{ $item->advance_salary }}</td>
                                         <td>
-                                            <a href="{{ route('edit.employee',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"><i class="fa-regular fa-pen-to-square"></i></a>
-                                            <a href="{{ route('delete.employee',$item->id) }}" id="delete" class="btn btn-danger rounded-pill waves-effect waves-light"><i class="fa-solid fa-trash"></i></a>
+                                            <a href="{{ route('edit.advance.salary',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"><i class="fa-regular fa-pen-to-square"></i></a>
+                                            <a href="{{ route('delete.advance.salary',$item->id) }}" id="delete" class="btn btn-danger rounded-pill waves-effect waves-light"><i class="fa-solid fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach

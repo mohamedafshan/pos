@@ -37,6 +37,24 @@
                 </li>
 
                 <li>
+                    <a href="#salary" data-bs-toggle="collapse">
+                        <i class="mdi mdi-cart-outline"></i>
+                        <span> Employee Salary </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="salary">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('add.advance.salary') }}">Add Advance Salary</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('all.advance.salary') }}">All Advance Salary</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
                     <a href="#sidebarCrm" data-bs-toggle="collapse">
                         <i class="mdi mdi-account-multiple-outline"></i>
                         <span> Customer Manage </span>

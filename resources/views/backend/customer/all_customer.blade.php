@@ -50,9 +50,9 @@
                                         <td>{{ $item->phone }}</td>
                                         <td>{{ $item->shopname }}</td>
                                         <td>
-                                            <a href=" {{ route('edit.customer',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
+                                            <a href=" {{ route('edit.customer',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"><i class="fa-regular fa-pen-to-square"></i></a>
                                            
-                                            <a href="{{ route('delete.customer',$item->id) }}" id="delete" class="btn btn-danger rounded-pill waves-effect waves-light">Delete</a>
+                                            <a href="{{ route('delete.customer',$item->id) }}" id="delete" class="btn btn-danger rounded-pill waves-effect waves-light"><i class="fa-solid fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
