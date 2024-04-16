@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\AttendanceController;
 use App\Http\Controllers\Backend\CatergoryController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\EmployeeController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SalaryController;
 use App\Http\Controllers\Backend\SupplierController;
 use App\Http\Controllers\ProfileController;
@@ -112,5 +113,15 @@ Route::controller(CatergoryController::class)->group(function(){
     Route::get('edit/catergory/{id}','EditCatergory')->name('edit.catergory');
     Route::post('catergory/update','CatergoryUpdate')->name('catergory.update');
     Route::get('delete/catergory/{id}','DeleteCatergory')->name('delete.catergory'); 
+}); 
+
+//Product All Manage
+Route::controller(ProductController::class)->group(function(){
+    Route::get('all/product','AllProduct')->name('all.product'); 
+    Route::get('add/product','AddProduct')->name('add.product');
+    Route::post('product/store','ProductStore')->name('product.store');
+    Route::get('edit/product/{id}','EditProduct')->name('edit.product');
+    Route::post('product/update','ProductUpdate')->name('product.update');
+    Route::get('delete/product/{id}','DeleteProduct')->name('delete.product');
 }); 
 require __DIR__.'/auth.php';

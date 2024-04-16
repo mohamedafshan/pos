@@ -12,7 +12,7 @@
                 <li>
                     <a href="{{ url('/dashboard') }}">
                         <i class="mdi mdi-view-dashboard-outline"></i>
-                        <span> Dashboard </span>
+                        <span> Dashboard </span>img
                     </a>
                 </li>
 
@@ -122,6 +122,25 @@
                         <ul class="nav-second-level">
                             <li>
                                 <a href="{{ route('all.catergory') }}">Employee Attendance</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                
+                <li>
+                    <a href="#product" data-bs-toggle="collapse">
+                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <span>Manage Product</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="product">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.product') }}">All Products</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.product') }}">Add Products</a>
                             </li>
                         </ul>
                     </div>

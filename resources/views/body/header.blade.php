@@ -175,7 +175,7 @@
                     <img src="  {{ asset('backend/assets/images/logo-sm.png') }}" alt="" height="22">
                 </span>
                 <span class="logo-lg">
-                    <img src="  {{ asset('backend/assets/images/logo-light.png') }}" alt="" height="20">
+                    <img src="  {{ asset('backend/assets/images/laravel.png') }}" alt="" height="60" width="140">
                 </span>
             </a>
         </div>
