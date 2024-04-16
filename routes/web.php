@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AttendanceController;
+use App\Http\Controllers\Backend\CatergoryController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\SalaryController;
@@ -102,5 +103,14 @@ Route::controller(AttendanceController::class)->group(function(){
     Route::get('employee/attend/edit/{date}','EmployeeAttendEdit')->name('employee.attend.edit');
     Route::get('view/employee/attend/{date}','ViewEmployeeAttendence')->name('view.employee.attendence'); 
  //
+}); 
+
+//Catergory All Manage
+Route::controller(CatergoryController::class)->group(function(){
+    Route::get('all/catergory','AllCatergory')->name('all.catergory'); 
+    Route::post('catergory/store','CatergoryStore')->name('catergory.store');
+    Route::get('edit/catergory/{id}','EditCatergory')->name('edit.catergory');
+    Route::post('catergory/update','CatergoryUpdate')->name('catergory.update');
+    Route::get('delete/catergory/{id}','DeleteCatergory')->name('delete.catergory'); 
 }); 
 require __DIR__.'/auth.php';
