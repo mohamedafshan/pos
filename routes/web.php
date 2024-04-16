@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\AttendanceController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\SalaryController;
@@ -84,4 +85,22 @@ Route::controller(SalaryController::class)->group(function(){
     Route::post('advance/salary/update','AdvanceSalaryUpdate')->name('advance.salary.update');
     Route::get('delete/advance/salary/{id}','DeleteAdvanceSalary')->name('delete.advance.salary');
 });
+
+//Pay All Manage
+Route::controller(SalaryController::class)->group(function(){
+    Route::get('pay/salary','PaySalary')->name('pay.salary');
+    Route::get('pay/now/salary/{id}','PayNowSalary')->name('pay.now.salary');
+    Route::post('employee/salary/store','EmployeeSalaryStore')->name('employee.salary.store');
+    Route::get('month/salary','MonthSalary')->name('month.salary'); //employee.attend.list
+}); 
+
+//Attendance All Manage
+Route::controller(AttendanceController::class)->group(function(){
+    Route::get('employee/attend/list','EmployeeAttendList')->name('employee.attend.list');
+    Route::get('add/employee/attend','AddEmployeeAttend')->name('add.employee.attend');
+    Route::post('employee/attend/store','EmployeeAttendStore')->name('employee.attend.store');
+    Route::get('employee/attend/edit/{date}','EmployeeAttendEdit')->name('employee.attend.edit');
+    Route::get('view/employee/attend/{date}','ViewEmployeeAttendence')->name('view.employee.attendence'); 
+ //
+}); 
 require __DIR__.'/auth.php';

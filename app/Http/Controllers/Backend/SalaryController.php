@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\AdvanceSalary;
 use App\Models\Employee;
+use App\Models\PaySalary;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class SalaryController extends Controller
         $validateData = $request->validate([
             'month' => 'required|max:255',
             'year' => 'required',
-            'advance_salary' => 'required|max:255',
+            // 'advance_salary' => 'required|max:255',
         ]);
 
         $month = $request->month;
@@ -87,5 +88,39 @@ class SalaryController extends Controller
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notification);
+    }
+
+    /////////////////////////////////       Pay Salary All Method            ///////////////////////////////////////
+    public function PaySalary(){
+        $employee = Employee::latest()->get();
+        return view('backend.salary.pay_salary',compact('employee'));
+    }
+
+    public function PayNowSalary($id){
+        $paysalary = Employee::findOrFail($id);
+        return view('backend.salary.paid_salary',compact('paysalary'));
+    }
+
+    public function EmployeeSalaryStore(Request $request){
+        $employee_id = $request->id;
+        PaySalary::insert([
+            'employee_id' => $request->id,
+            'salary_month' =>$request->salary_month,
+            'paid_amount' => $request->paid_amount,
+            'advance_salary' => $request->advance_salary,
+            'due_salary' => $request->due_salary,
+            'created_at' => Carbon::now(),
+        ]);
+
+        $notification = array(
+            'message' => 'Employee Salary Paid  Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('pay.salary')->with($notification);
+    }
+
+    public function MonthSalary(){
+        $paidsalary = PaySalary::latest()->get();
+        return view('backend.salary.month_salary',compact('paidsalary'));
     }
 }
