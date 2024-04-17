@@ -58,6 +58,9 @@
                                                     class="btn btn-blue rounded-pill waves-effect waves-light"><i
                                                         class="fa-regular fa-pen-to-square"></i></a>
 
+                                                <a href=" {{ route('barcode.product', $item->id) }}"
+                                                    class="btn btn-info rounded-pill waves-effect waves-light"><i class="fa-solid fa-barcode"></i></a><i ></i>
+
                                                 <a href="{{ route('delete.product', $item->id) }}" id="delete"
                                                     class="btn btn-danger rounded-pill waves-effect waves-light"><i
                                                         class="fa-solid fa-trash"></i></a>

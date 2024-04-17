@@ -7,6 +7,7 @@ use App\Models\Catergory;
 use App\Models\Products;
 use App\Models\Supplier;
 use Carbon\Carbon;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
@@ -26,6 +27,7 @@ class ProductController extends Controller
     }
 
     public function ProductStore(Request $request){
+        $product_code = IdGenerator::generate(['table' => 'products','field' =>'product_code','length' => 4,'prefix' => 'PC']);
         if($request->file('product_image')){
             $image = $request->file('product_image');
             $manager = new ImageManager(new Driver());
@@ -42,7 +44,7 @@ class ProductController extends Controller
             'product_name' => $request->product_name,
             'catergory_id' => $request->catergory_id,
             'supplier_id' => $request->supplier_id,
-            'product_code' => $request->product_code,
+            'product_code' => $product_code,
             'product_garage' => $request->product_garage,
             'product_store' => $request->product_store,
             'buying_date' => $request->buying_date,
@@ -131,5 +133,10 @@ class ProductController extends Controller
             'alert-type'=>'success'
         );
          return redirect()->back()->with($notification);
+    }
+
+    public function BarcodeProduct($id){
+        $product = Products::findOrFail($id);
+        return view('backend.product.barcode_product',compact('product'));
     }
 }
