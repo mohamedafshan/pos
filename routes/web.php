@@ -124,5 +124,8 @@ Route::controller(ProductController::class)->group(function(){
     Route::post('product/update','ProductUpdate')->name('product.update');
     Route::get('delete/product/{id}','DeleteProduct')->name('delete.product'); 
     Route::get('barcode/product/{id}','BarcodeProduct')->name('barcode.product');
+    Route::get('import/product','ImportProduct')->name('import.product');
+    Route::get('Export/product','Export')->name('export');
+    Route::post('import/product','Import')->name('import');
 }); 
 require __DIR__.'/auth.php';

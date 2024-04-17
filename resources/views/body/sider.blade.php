@@ -121,7 +121,7 @@
                     <div class="collapse" id="catergory">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('all.catergory') }}">Employee Attendance</a>
+                                <a href="{{ route('all.catergory') }}">All Catergory</a>
                             </li>
                         </ul>
                     </div>
@@ -141,6 +141,9 @@
                             </li>
                             <li>
                                 <a href="{{ route('add.product') }}">Add Products</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('import.product') }}">Import Products</a>
                             </li>
                         </ul>
                     </div>
