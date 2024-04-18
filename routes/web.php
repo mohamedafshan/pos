@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\AttendanceController;
 use App\Http\Controllers\Backend\CatergoryController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\EmployeeController;
+use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SalaryController;
 use App\Http\Controllers\Backend\SupplierController;
@@ -127,5 +128,17 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('import/product','ImportProduct')->name('import.product');
     Route::get('Export/product','Export')->name('export');
     Route::post('import/product','Import')->name('import');
+}); 
+
+//Expense All Manage
+Route::controller(ExpenseController::class)->group(function(){
+    Route::get('add/expense','AddExpense')->name('add.expense');
+    Route::post('expense/store','ExpenseStore')->name('expense.store');
+    Route::get('today/expense','TodayExpense')->name('today.expense');
+    Route::get('edit/expense/{id}','EditExpense')->name('edit.expense');
+    Route::post('expense/update','ExpenseUpdate')->name('expense.update');
+    
+    Route::get('month/expense','MonthExpense')->name('month.expense');
+    Route::get('year/expense','YearExpense')->name('year.expense');
 }); 
 require __DIR__.'/auth.php';
