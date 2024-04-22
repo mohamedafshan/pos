@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\CatergoryController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\ExpenseController;
+use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\PosController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SalaryController;
@@ -150,5 +151,17 @@ Route::controller(PosController::class)->group(function(){
     Route::get('/all-item','AllItem');
     Route::post('/cart-update/{rowId}','CartUpdate');
     Route::get('/cart-remove/{rowId}','CartRemove');
+    Route::post('/create-invoice','CreateInvoice');
+}); 
+
+//Order All Manage
+Route::controller(OrderController::class)->group(function(){
+    Route::post('/final-invoice','FinalInvoice');
+    Route::get('/pending/order','PendingOrder')->name('pending.order');
+    Route::get('/order/details/{id}','OrderDetails')->name('order.details');
+    Route::post('/order/status/update','OrderStatusUpdate')->name('order.status.update');
+    Route::get('/complete/order','CompleteOrder')->name('complete.order');
+    Route::get('/stock/manage','StockManage')->name('stock.manage');
+    Route::get('/order/invoice-download/{order_id}','OrderInvoice');
 }); 
 require __DIR__.'/auth.php';

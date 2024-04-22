@@ -157,6 +157,40 @@
                     </div>
                 </li>
 
+                <li>
+                    <a href="#Order" data-bs-toggle="collapse">
+                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <span>Manage Order</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="Order">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('pending.order') }}">Pending Order</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('complete.order') }}">Complete Order</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+
+                <li>
+                    <a href="#stock" data-bs-toggle="collapse">
+                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <span>Stock Manage</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="stock">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('stock.manage') }}">Stock</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
                 <li class="menu-title mt-2">Custom</li>
 
                 <li>
