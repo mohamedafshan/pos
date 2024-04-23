@@ -16,6 +16,7 @@
                     </a>
                 </li>
 
+                @if(Auth::user()->can('Pos Menu'))
                 <li>
                     <a href="{{ route('pos') }}">
                         <span class="badge bg-pink float-end">Hot</span>
@@ -23,9 +24,12 @@
                         <span> POS </span>
                     </a>
                 </li>
+                @endif
 
                 <li class="menu-title mt-2">Apps</li>
 
+
+                {{-- @if(Auth::user()->can('employee.menu')) --}}
                 <li>
                     <a href="#sidebarEcommerce" data-bs-toggle="collapse">
                         <i class="mdi mdi-cart-outline"></i>
@@ -34,15 +38,22 @@
                     </a>
                     <div class="collapse" id="sidebarEcommerce">
                         <ul class="nav-second-level">
-                            <li>
-                                <a href="{{ route('all.employee') }}">All Employee</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('add.employee') }}">Add Employee</a>
-                            </li>
+                            {{-- @if(Auth::user()->can('employee.all')) --}}
+
+                                <li>
+                                    <a href="{{ route('all.employee') }}">All Employee</a>
+                                </li>
+                            {{-- @endif --}}
+
+                            {{-- @if(Auth::user()->can('employee.add'))  --}}
+                                <li>
+                                    <a href="{{ route('add.employee') }}">Add Employee</a>
+                                </li>
+                            {{-- @endif --}}
                         </ul>
                     </div>
                 </li>
+                {{-- @endif --}}
 
                 <li>
                     <a href="#salary" data-bs-toggle="collapse">
@@ -232,7 +243,7 @@
                             </li>
 
                             <li>
-                                <a href="{{ route('all.roles') }}">All Admin</a>
+                                <a href="{{ route('add.admin') }}">Add Admin</a>
                             </li>
                         </ul>
                     </div>

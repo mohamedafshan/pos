@@ -147,7 +147,7 @@ Route::controller(ExpenseController::class)->group(function(){
 
 //POS All Manage
 Route::controller(PosController::class)->group(function(){
-    Route::get('/pos','Pos')->name('pos');//  /add-cart
+    Route::get('/pos','Pos')->name('pos');//  /add-cart   ->middleware('permission:pos');
     Route::post('/add-cart','AddCart');
     Route::get('/all-item','AllItem');
     Route::post('/cart-update/{rowId}','CartUpdate');
@@ -197,7 +197,12 @@ Route::controller(RoleController::class)->group(function(){
 }); 
 
 //Admin User All Route
-// Route::controller(AdminController::class)->group(function(){
-//     Route::get('/all/admin','AllAdmin')->name('all.admin');
-// }); 
+Route::controller(AdminController::class)->group(function(){
+    Route::get('/all/admin','AllAdmin')->name('all.admin'); 
+    Route::get('/add/admin','AddAdmin')->name('add.admin');
+    Route::post('/admin/store','AdminStore')->name('admin.store'); 
+    Route::get('/edit/admin/{id}','EditAdmin')->name('edit.admin');
+    Route::post('/update/admin','UpdateAdmin')->name('admin.update');
+    Route::get('/delete/delete/{id}','DeleteAdmin')->name('delete.admin');
+}); 
 require __DIR__.'/auth.php';

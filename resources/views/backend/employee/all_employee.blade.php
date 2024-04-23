@@ -49,8 +49,11 @@
                                         <td>{{ $item->phone }}</td>
                                         <td>{{ $item->salaray }}</td>
                                         <td>
-                                            <a href="{{ route('edit.employee',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"><i class="fa-regular fa-pen-to-square"></i></a>
-                                            <a href="{{ route('delete.employee',$item->id) }}" id="delete" class="btn btn-danger rounded-pill waves-effect waves-light"><i class="fa-solid fa-trash"></i></a>
+                                            
+                                                <a href="{{ route('edit.employee',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"><i class="fa-regular fa-pen-to-square"></i></a>
+                                            @if(Auth::user()->can('employee.all'))
+                                                <a href="{{ route('delete.employee',$item->id) }}" id="delete" class="btn btn-danger rounded-pill waves-effect waves-light"><i class="fa-solid fa-trash"></i></a>
+                                            @endif  
                                         </td>
                                     </tr>
                                 @endforeach
