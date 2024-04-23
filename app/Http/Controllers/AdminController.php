@@ -91,4 +91,10 @@ class AdminController extends Controller
         );
         return back()->with($notification);
     }
+
+    ////////////////////////////////////     Admin User All Method     ////////////////////////////////////////////
+    // public function AllAdmin(){
+    //     $allaminuser = User::latest()->get();
+    //     return view('backend.admin.all_admin',compact('allaminuser'));
+    // }
 }
