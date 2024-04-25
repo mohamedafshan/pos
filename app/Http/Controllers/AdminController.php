@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\User;
+// use Faker\Core\File;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -10,6 +12,10 @@ use Illuminate\Support\Facades\Hash;
 use PhpParser\Node\Expr\FuncCall;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Artisan;
+
 
 class AdminController extends Controller
 {
@@ -159,4 +165,34 @@ class AdminController extends Controller
         );
         return redirect()->back()->with($notification);
     }
+
+    ///////////////////////////////////     DataBase Backup        ////////////////////////////
+
+    public function DatabaseBackup(){
+        return view('admin.db_backup')->with('files',File::allFiles(storage_path('app/Rubysoft')));
+    }
+
+    public function BackupNow(){
+        Artisan::call('backup:run');
+        $notification = array(
+            'message'=>'Database Backup Successfully',
+            'alert-type'=>'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+
+    public function DownloadDatabase($getFIlename){
+        $path = storage_path('app\Rubysoft/'.$getFIlename);
+        return response()->download($path);
+    }
+
+    public function DeleteDatabase($getFIlename){
+        Storage::delete('Rubysoft/'.$getFIlename);
+        $notification = array(
+            'message'=>'Database Deleted Successfully',
+            'alert-type'=>'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+    
 }

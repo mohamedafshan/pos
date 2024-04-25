@@ -164,6 +164,11 @@ Route::controller(OrderController::class)->group(function(){
     Route::get('/complete/order','CompleteOrder')->name('complete.order');
     Route::get('/stock/manage','StockManage')->name('stock.manage');
     Route::get('/order/invoice-download/{order_id}','OrderInvoice');
+
+     // Due All Route order/due'+id,
+     Route::get('/pending/due','PendingDue')->name('pending.due');
+     Route::get('/order/due/{id}','OrderDueAjax');
+     Route::post('/update/due/','UpdateDue')->name('update.due');
 }); 
 
 //Permission All Manage
@@ -196,7 +201,7 @@ Route::controller(RoleController::class)->group(function(){
     Route::get('/admin/delete/roles/{id}','AdminDeleteRoles')->name('admin.delete.roles');
 }); 
 
-//Admin User All Route
+// Admin User All Route
 Route::controller(AdminController::class)->group(function(){
     Route::get('/all/admin','AllAdmin')->name('all.admin'); 
     Route::get('/add/admin','AddAdmin')->name('add.admin');
@@ -204,5 +209,11 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('/edit/admin/{id}','EditAdmin')->name('edit.admin');
     Route::post('/update/admin','UpdateAdmin')->name('admin.update');
     Route::get('/delete/delete/{id}','DeleteAdmin')->name('delete.admin');
+
+    //Database Backup
+    Route::get('/database/backup','DatabaseBackup')->name('database.backup');
+    Route::get('/backup/now','BackupNow'); 
+    Route::get('{getFilename}','DownloadDatabase'); //
+    Route::get('delete/database/{getFilename}','DeleteDatabase');  //url('delete/database'.$item->getFilename())
 }); 
 require __DIR__.'/auth.php';

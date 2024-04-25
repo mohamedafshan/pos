@@ -5,13 +5,19 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use App\Models\Products;
+use Carbon\Carbon;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class PosController extends Controller
 {
     public function Pos(){
-        $product = Products::latest()->get();
+        $today_date = Carbon::now();
+        $product = Products::where('expire_date','>',$today_date)->latest()->get();
+        
+        // If you need to fecthig with expired product data you can use below
+        // $product = Products::latest()->get();
+        
         $customer = Customer::latest()->get();
         return view('backend.pos.pos_page',compact('product','customer'));
     }

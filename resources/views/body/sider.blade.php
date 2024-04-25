@@ -182,6 +182,10 @@
                             <li>
                                 <a href="{{ route('complete.order') }}">Complete Order</a>
                             </li>
+
+                            <li>
+                                <a href="{{ route('pending.due') }}">Pending Due</a>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -270,6 +274,21 @@
                             </li>
                             <li>
                                 <a href="{{ route('year.expense') }}">Yearly Expense</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#backup" data-bs-toggle="collapse">
+                        <i class="mdi mdi-account-circle-outline"></i>
+                        <span> Expense </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="backup">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('database.backup') }}">Database Backup</a>
                             </li>
                         </ul>
                     </div>

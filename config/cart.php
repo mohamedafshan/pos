@@ -72,7 +72,7 @@ return [
 
         'decimal_point' => '.',
 
-        'thousand_separator' => ',',
+        'thousand_separator' => '',  //100,000 If found the value with coma we can't calculate the data
 
     ],
 
