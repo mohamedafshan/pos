@@ -13,7 +13,7 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <a href="{{ route('add.roles.permission') }}"
-                                    class="btn btn-primary rounded-pill waves-effect waves-light">Add Role In Permission</a>
+                                    class="btn btn-primary waves-effect waves-light">Add Role In Permission</a>
 
                             </ol>
                         </div>

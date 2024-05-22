@@ -55,7 +55,7 @@
                                             <td><span class="badge bg-danger "> {{ $item->order_status }} </span></td>
                                             <td>
                                                 <a href=" {{ route('order.details', $item->id) }}"
-                                                    class="btn btn-blue rounded-pill waves-effect waves-light">Details</a>
+                                                    class="btn btn-blue waves-effect waves-light">Details</a>
                                             </td>
                                         </tr>
                                     @endforeach

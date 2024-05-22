@@ -12,7 +12,7 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <a href="{{ route('add.employee') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Employee</a>
+                            <a href="{{ route('add.employee') }}" class="btn btn-primary waves-effect waves-light">Add Employee</a>
                         </ol>
                     </div>
                     <h4 class="page-title">All Employee</h4>
@@ -52,7 +52,7 @@
                                             
                                                 <a href="{{ route('edit.employee',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"><i class="fa-regular fa-pen-to-square"></i></a>
                                             @if(Auth::user()->can('employee.all'))
-                                                <a href="{{ route('delete.employee',$item->id) }}" id="delete" class="btn btn-danger rounded-pill waves-effect waves-light"><i class="fa-solid fa-trash"></i></a>
+                                                <a href="{{ route('delete.employee',$item->id) }}" id="delete" class="btn btn-danger waves-effect rounded-pill waves-light"><i class="fa-solid fa-trash"></i></a>
                                             @endif  
                                         </td>
                                     </tr>

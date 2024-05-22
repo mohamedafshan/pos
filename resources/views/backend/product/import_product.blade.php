@@ -14,7 +14,7 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <a href="{{ route('export') }}"
-                                    class="btn btn-primary rounded-pill waves-effect waves-light">Download Xlsx</a>
+                                    class="btn btn-primary waves-effect waves-light">Download Xlsx</a>
                             </ol>
                         </div>
                         <h4 class="page-title">Import Product</h4>

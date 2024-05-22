@@ -13,7 +13,7 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <a href="{{ route('add.expense') }}"
-                                    class="btn btn-primary rounded-pill waves-effect waves-light">Add Expense</a>
+                                    class="btn btn-primary waves-effect waves-light">Add Expense</a>
 
                             </ol>
                         </div>

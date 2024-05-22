@@ -39,7 +39,7 @@
                 <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#"
                     role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="fe-bell noti-icon"></i>
-                    <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                    <span class="badge bg-danger rounded-circle noti-icon-badge">5</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-lg">
 
@@ -161,21 +161,21 @@
         <div class="logo-box">
             <a href="index.html" class="logo logo-dark text-center">
                 <span class="logo-sm">
-                    <img src="  {{ asset('backend/assets/images/logo-sm.png') }}" alt="" height="22">
+                    <img src="  {{ asset('backend/assets/images/Rubysoft.png') }}" alt="" height="22px" width="22px">
                     <!-- <span class="logo-lg-text-light">UBold</span> -->
                 </span>
                 <span class="logo-lg">
-                    <img src="  {{ asset('backend/assets/images/logo-dark.png') }}" alt="" height="20">
+                    <img src="  {{ asset('backend/assets/images/Rubysoft.png') }}" alt="" height="40px" width="40px">
                     <!-- <span class="logo-lg-text-light">U</span> -->
                 </span>
             </a>
 
             <a href="index.html" class="logo logo-light text-center">
                 <span class="logo-sm">
-                    <img src="  {{ asset('backend/assets/images/logo-sm.png') }}" alt="" height="22">
+                    <img src="  {{ asset('backend/assets/images/Rubysoft.png') }}" alt="" height="22" width="22">
                 </span>
                 <span class="logo-lg">
-                    <img src="  {{ asset('backend/assets/images/laravel.png') }}" alt="" height="60" width="140">
+                    <img src="  {{ asset('backend/assets/images/Rubysoft.png') }}" alt="" height="100" width="150">
                 </span>
             </a>
         </div>

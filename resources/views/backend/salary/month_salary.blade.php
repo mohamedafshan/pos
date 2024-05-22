@@ -13,7 +13,7 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <a href="{{ route('add.advance.salary') }}"
-                                    class="btn btn-primary rounded-pill waves-effect waves-light">Add Advance Salary</a>
+                                    class="btn btn-primary waves-effect waves-light">Add Advance Salary</a>
                             </ol>
                         </div>
                         <h4 class="page-title">Last Month Salary</h4>
@@ -56,7 +56,7 @@
                                             </td>
                                             <td>
                                                 <a href="{{ route('edit.advance.salary', $item->id) }}"
-                                                    class="btn btn-blue rounded-pill waves-effect waves-light">
+                                                    class="btn btn-blue waves-effect waves-light">
                                                     History
                                                 </a>
                                             </td>

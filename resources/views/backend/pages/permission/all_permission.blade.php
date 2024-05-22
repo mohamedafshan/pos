@@ -13,7 +13,7 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <a href="{{ route('add.permission') }}"
-                                    class="btn btn-primary rounded-pill waves-effect waves-light">Add Permission</a>
+                                    class="btn btn-primary waves-effect waves-light">Add Permission</a>
 
                             </ol>
                         </div>
@@ -46,11 +46,11 @@
                                             <td>{{ $item->group_name }}</td>
                                             <td>
                                                 <a href=" {{ route('edit.permission', $item->id) }}"
-                                                    class="btn btn-blue rounded-pill waves-effect waves-light"><i
+                                                    class="btn btn-blue waves-effect waves-light"><i
                                                         class="fa-regular fa-pen-to-square"></i></a>
 
                                                 <a href="{{ route('delete.permission', $item->id) }}" id="delete"
-                                                    class="btn btn-danger rounded-pill waves-effect waves-light"><i
+                                                    class="btn btn-danger waves-effect waves-light"><i
                                                         class="fa-solid fa-trash"></i></a>
                                             </td>
                                         </tr>

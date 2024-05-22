@@ -11,7 +11,7 @@
 
                 <li>
                     <a href="{{ url('/dashboard') }}">
-                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <i class="fa-solid fa-house"></i>
                         <span> Dashboard </span>
                     </a>
                 </li>
@@ -20,7 +20,7 @@
                 <li>
                     <a href="{{ route('pos') }}">
                         <span class="badge bg-pink float-end">Hot</span>
-                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <i class="fa-solid fa-cart-shopping"></i>
                         <span> POS </span>
                     </a>
                 </li>
@@ -32,7 +32,7 @@
                 {{-- @if(Auth::user()->can('employee.menu')) --}}
                 <li>
                     <a href="#sidebarEcommerce" data-bs-toggle="collapse">
-                        <i class="mdi mdi-cart-outline"></i>
+                        <i class="fa-solid fa-users"></i>
                         <span> Employee Manage </span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -57,7 +57,7 @@
 
                 <li>
                     <a href="#salary" data-bs-toggle="collapse">
-                        <i class="mdi mdi-cart-outline"></i>
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
                         <span> Employee Salary </span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -83,7 +83,7 @@
 
                 <li>
                     <a href="#sidebarCrm" data-bs-toggle="collapse">
-                        <i class="mdi mdi-account-multiple-outline"></i>
+                        <i class="fa-solid fa-user"></i>
                         <span> Customer Manage </span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -100,7 +100,7 @@
 
                 <li>
                     <a href="#sidebarEmail" data-bs-toggle="collapse">
-                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <i class="fa-solid fa-truck-field"></i>
                         <span> Supplier Manage </span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -118,7 +118,7 @@
                 
                 <li>
                     <a href="#attendance" data-bs-toggle="collapse">
-                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <i class="fa-solid fa-clipboard-user"></i>
                         <span> Employee Attendance </span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -133,7 +133,7 @@
 
                 <li>
                     <a href="#catergory" data-bs-toggle="collapse">
-                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <i class="fa-solid fa-layer-group"></i>
                         <span>Catergory</span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -149,7 +149,7 @@
                 
                 <li>
                     <a href="#product" data-bs-toggle="collapse">
-                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <i class="fa-solid fa-box-open"></i>
                         <span>Manage Product</span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -170,7 +170,7 @@
 
                 <li>
                     <a href="#Order" data-bs-toggle="collapse">
-                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <i class="fa-solid fa-file-pen"></i>
                         <span>Manage Order</span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -193,7 +193,7 @@
 
                 <li>
                     <a href="#stock" data-bs-toggle="collapse">
-                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <i class="fa-solid fa-cubes-stacked"></i>
                         <span>Stock Manage</span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -208,7 +208,7 @@
 
                 <li>
                     <a href="#permission" data-bs-toggle="collapse">
-                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <i class="fa-solid fa-person-circle-check"></i>
                         <span>Roles And Permission</span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -236,7 +236,7 @@
 
                 <li>
                     <a href="#admin" data-bs-toggle="collapse">
-                        <i class="mdi mdi-email-multiple-outline"></i>
+                        <i class="fa-solid fa-user-tie"></i>
                         <span>Setting Admin User</span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -257,7 +257,7 @@
 
                 <li>
                     <a href="#sidebarAuth" data-bs-toggle="collapse">
-                        <i class="mdi mdi-account-circle-outline"></i>
+                        <i class="fa-solid fa-sack-dollar"></i>
                         <span> Expense </span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -281,8 +281,8 @@
 
                 <li>
                     <a href="#backup" data-bs-toggle="collapse">
-                        <i class="mdi mdi-account-circle-outline"></i>
-                        <span> Expense </span>
+                        <i class="fa-solid fa-database"></i>
+                        <span> Backup Data</span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="backup">
@@ -297,7 +297,7 @@
                 <li>
                     <a href="#sidebarExpages" data-bs-toggle="collapse">
                         <i class="mdi mdi-text-box-multiple-outline"></i>
-                        <span> Extra Pages </span>
+                        <span> Complaint </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarExpages">

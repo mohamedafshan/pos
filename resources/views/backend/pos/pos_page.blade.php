@@ -27,7 +27,7 @@
                     <div class="card text-center">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered border-primary mb-0">
+                                <table class="table table-bordered border-danger mb-0 text-white">
                                     <thead>
                                         <tr>
                                             <th>Name</th>
@@ -63,33 +63,47 @@
                                 </table>
                             </div>
 
-                            <div class="bg-primary">
+                        <style>
+                            .bg-darkblue {
+                                --ct-bg-opacity: 1;
+                                background-color: rgb(25 45 144 / 75%) !important;
+                            }
+
+                            .text-yellow {
+                                --ct-bg-opacity: 1;
+                                color: #e5de00 !important;
+                            }
+
+                        </style>
+                           
+                            <div class="bg-darkblue">
                                 <br>
-                                    <p style="font-size: 18px; color:#fff"> Quantity : {{ Cart::count() }}</p>
-                                    <p style="font-size: 18px; color:#fff"> Sub Total : {{ Cart::subtotal() }}</p>
-                                    <p style="font-size: 18px; color:#fff"> Vat : {{ Cart::tax() }}</p>
-                                    <p><h2 class="text-white">Total </h2> <h1 class="text-white">{{ Cart::total() }}</h1></p>
+                                    <p style="font-size: 18px; color:#ffffff"> Quantity : {{ Cart::count() }}</p>
+                                    <p style="font-size: 18px; color:#ffffff"> Sub Total : {{ Cart::subtotal() }}</p>
+                                    <p style="font-size: 18px; color:#ffffff"> Vat : {{ Cart::tax() }}</p>
+                                    <p><h2 class="text-white">Total </h2> <h1 class="text-yellow">Rs.{{ Cart::total() }}</h1></p>
                                 <br>
                             </div>
 
                             <form action="{{ url('/create-invoice') }}" method="POST" id="myForm">
                                 @csrf
                                     <div class="form-group mb-3">
-                                        <label for="firstname" class="form-label">All Customer</label>
+                                        {{-- <label for="firstname" class="form-label">All Customer</label> --}}
 
-                                        <a href="{{ route('add.customer') }}"
-                                        class="btn btn-blue rounded-pill waves-effect waves-light mb-2 mt-2">
-                                         Add Product</a>
-
-                                        <select class="form-select" id="example-select" name="customer_id" >
+                                        <select class="form-select mt-4" id="example-select" name="customer_id" >
                                             <option selected disabled>Select Customer</option>
                                             @foreach ($customer as $cus)
                                                 <option value="{{ $cus->id }}">{{ $cus->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <a href="{{ route('add.customer') }}"
+                                            class="btn btn-outline-danger waves-effect waves-light">
+                                         Add Product</a>
+                                        <button class="btn btn-outline-success waves-effect wave-light">Create Invoice</button>
+                                    </div>
                                     
-                                    <button class="btn btn-blue waves-effect wave-light">Create Invoice</button>
                             </form>
 
                         </div>

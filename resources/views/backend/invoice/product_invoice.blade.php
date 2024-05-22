@@ -31,15 +31,15 @@
                                     <div class="auth-logo">
                                         <div class="logo logo-dark">
                                             <span class="logo-lg">
-                                                <img src="{{ asset('backend/assets/images/logo-dark.png') }}" alt=""
+                                                <img src="{{ asset('backend/assets/images/Rubysoft.png') }}" alt=""
                                                     height="22">
                                             </span>
                                         </div>
 
                                         <div class="logo logo-light">
                                             <span class="logo-lg">
-                                                <img src="{{ asset('backend/assets/images/logo-light.png') }}"
-                                                    alt="" height="22">
+                                                <img src="{{ asset('backend/assets/images/Rubysoft.png') }}"
+                                                    alt="" height="80" height="200">
                                             </span>
                                         </div>
                                     </div>

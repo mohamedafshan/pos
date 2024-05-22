@@ -69,7 +69,7 @@
                                             </td>
                                             <td>
                                                 <a href="{{ route('pay.now.salary', $item->id) }}"
-                                                    class="btn btn-blue rounded-pill waves-effect waves-light">
+                                                    class="btn btn-blue waves-effect waves-light">
                                                     Pay Now
                                                 </a>
                                             </td>

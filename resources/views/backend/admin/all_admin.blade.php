@@ -13,7 +13,7 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <a href="{{ route('add.admin') }}"
-                                    class="btn btn-primary rounded-pill waves-effect waves-light">Add Admin</a>
+                                    class="btn btn-primary waves-effect waves-light">Add Admin</a>
 
                             </ol>
                         </div>

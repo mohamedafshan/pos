@@ -13,7 +13,7 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <a href="{{ url('backup.now') }}"
-                                    class="btn btn-primary rounded-pill waves-effect waves-light">Backup Now</a>
+                                    class="btn btn-primary waves-effect waves-light">Backup Now</a>
                             </ol>
                         </div>
                         <h4 class="page-title">All Backup</h4>
@@ -47,7 +47,7 @@
                                             <td>{{ $item->getPath() }}</td>
                                             <td>
 
-                                                <a href="{{ url($item->getFilename()) }}"
+                                                <a href="{{ route('backup',$item->getFilename()) }}"
                                                     class="btn btn-blue rounded-pill waves-effect waves-light">Download</a>
                                                 
                                                     <a href="{{ url('delete/database/'.$item->getFilename()) }}" id="delete"

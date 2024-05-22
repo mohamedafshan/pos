@@ -36,7 +36,7 @@
                                     <input type="hidden" name="id" value="{{ $employee->id }}"/>
                                     <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i>
                                         Add Employee</h5>
-                                    <div class="row">
+                                    <div cl ass="row">
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="firstname" class="form-label">Employee Name</label>
@@ -46,7 +46,7 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>
-                                        </div>
+                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="mb-3">
